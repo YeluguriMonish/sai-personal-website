@@ -1,1 +1,18 @@
+.bg-dark {
+    background-color: var(--primary-background)!important;
+}
 
+.navbar {
+  padding: 0.1 rem;
+  font-weight: bold;
+  font-family: 'Maven Pro', sans-serif;
+  border-bottom: 0.25rem solid var(--primary-accent);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--primary-accent);
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--primary-accent);
+}
