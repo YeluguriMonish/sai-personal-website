@@ -5,6 +5,8 @@ import Home from "./home/Home.js";
 import Resume from "./resume/Resume.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import "./Parent.css";
+
 export default class Parent extends Component {
   render() {
     return (
