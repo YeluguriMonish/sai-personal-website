@@ -1,0 +1,16 @@
+.template {
+  height: 100vh;
+}
+
+a[style] {
+  color: var(--primary-accent)!important;
+}
+span[style] {
+  color: var(--primary-accent)!important;
+}
+div[style] {
+  border-color: var(--primary-accent)!important;
+}
+p[style] {
+  color: red!important;
+}
