@@ -11,6 +11,3 @@ span[style] {
 div[style] {
   border-color: var(--primary-accent)!important;
 }
-p[style] {
-  color: red!important;
-}

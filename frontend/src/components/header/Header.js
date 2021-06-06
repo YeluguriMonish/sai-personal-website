@@ -12,7 +12,6 @@ export default class Header extends Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="resume">Resume</Nav.Link>
             <Nav.Link href="blog">Blog</Nav.Link>
           </Nav>
           <Navbar.Brand>
@@ -20,6 +19,7 @@ export default class Header extends Component {
             <a href="https://github.com/YeluguriMonish">
               <img
                 src="https://gdurl.com/Emiq"
+                alt="github icon"
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
@@ -30,6 +30,7 @@ export default class Header extends Component {
             <a href="https://www.linkedin.com/">
               <img
                 src="https://gdurl.com/7-5R"
+                alt="linked icon"
                 width="30"
                 height="30"
                 className="d-inline-block align-top"

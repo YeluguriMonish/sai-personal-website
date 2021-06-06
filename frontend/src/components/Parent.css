@@ -1,10 +1,11 @@
 /* global variables */
 :root {
   --primary-background: #DADED4;
-  --primary-foreground: #A3BCB6;
+  --secondary-background: #A3BCB6;
+  --primary-foreground: #3C403D;
   --primary-accent: #39603D;
 }
 
 * {
-background-color: var(--primary-background);
+  background-color: var(--primary-background);
 }
