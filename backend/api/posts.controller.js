@@ -8,8 +8,10 @@ export default class PostsController {
     const page = req.query.page ? parseInt(req.query.page, 10) : 0;
 
     let filters = {};
-    if (req.query.title) {
-      filters.title = req.query.title;
+    if (req.query.gist) {
+      filters.gist = req.query.gist;
+    } else if (req.query.category) {
+      filters.category = req.query.category;
     }
 
     const { postsList, totalNumPosts } = await PostsDAO.getPosts({

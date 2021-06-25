@@ -17,8 +17,10 @@ export default class PostsDAO {
   static async getPosts({ filters = null, page = 0, postsPerPage = 20 } = {}) {
     let query;
     if (filters) {
-      if ("title" in filters) {
-        query = { $text: { $search: filters["title"] } };
+      if ("gist" in filters) {
+        query = { $text: { $search: filters["gist"] } };
+      } else if ("category" in filters) {
+        query = { $text: { $search: filters["category"] } };
       }
     }
 

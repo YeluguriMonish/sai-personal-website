@@ -17,11 +17,12 @@ export default class ModifyDAO {
     }
   }
 
-  static async addPost(post, date, title) {
+  static async addPost(title, date, gist, category) {
     try {
       const postDoc = {
-        text: post,
         title: title,
+        gist: gist,
+        category: category,
         date: date,
       };
 
@@ -32,11 +33,11 @@ export default class ModifyDAO {
     }
   }
 
-  static async updatePost(postId, text, date, title) {
+  static async updatePost(postId, title, date, gist, category) {
     try {
       const updateResponse = await posts.updateOne(
         { _id: ObjectId(postId) },
-        { $set: { text: text, date: date, title: title } }
+        { $set: { title: title, date: date, gist: gist, category: category } }
       );
 
       return updateResponse;

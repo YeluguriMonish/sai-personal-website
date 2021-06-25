@@ -7,6 +7,7 @@ import "./Blog.css";
 export default class Blog extends Component {
   state = {
     posts: [],
+    categories: [],
   };
 
   componentDidMount() {
@@ -16,29 +17,46 @@ export default class Blog extends Component {
   getPosts = () => {
     PostDataService.getAll().then((response) => {
       this.setState({ posts: response.data.posts });
+      this.generateCategories();
     });
+  };
+
+  generateCategories = () => {
+    let categories = [];
+    this.state.posts.map((post) => categories.push(post.category));
+
+    let uniqueCategories = categories.filter((c, index) => {
+      return categories.indexOf(c) === index;
+    });
+    console.log(uniqueCategories);
+
+    this.setState({ categories: uniqueCategories });
   };
 
   render() {
     return (
       <div className="list">
-        {this.state.posts.map((post) => (
-          <>
-            <Card className="cards">
-              <Card.Body>
-                <Card.Title>{post.title}</Card.Title>
-                <Card.Text>{post.text.slice(0, 1500)}</Card.Text>
-                <a
-                  href="#"
-                  class="stretched-link"
-                  onClick={() => {
-                    this.props.handleClick(post.title);
-                  }}
-                ></a>
-              </Card.Body>
-            </Card>
-          </>
-        ))}
+        <Card>
+          <Card.Body>
+            <Card.Title>Categories</Card.Title>
+            {this.state.categories.map((category) => (
+              <>
+                <Card className="cards">
+                  <Card.Body>
+                    <Card.Title>{category}</Card.Title>
+                    <a
+                      href="#"
+                      class="stretched-link"
+                      onClick={() => {
+                        this.props.handleClick(category);
+                      }}
+                    ></a>
+                  </Card.Body>
+                </Card>
+              </>
+            ))}
+          </Card.Body>
+        </Card>
       </div>
     );
   }

@@ -5,12 +5,12 @@ class PostDataService {
     return http.get(`posts?page=${page}`);
   }
 
-  get(id) {
-    return http.get(`posts?id=${id}`);
+  get(title) {
+    return http.get(`posts?title=${title}`);
   }
 
-  find(query, by = "title", page = 0) {
-    return http.get(`posts?${by}=${query}&page=${page}`);
+  find(query, by = "gist") {
+    return http.get(`posts?${by}=${query}`);
   }
 
   createReview(data) {

@@ -3,11 +3,11 @@ import ModifyDAO from "../dao/modifyDAO.js";
 export default class ModifyController {
   static async apiUploadPost(req, res, next) {
     try {
+      const gist = req.body.gist;
       const title = req.body.title;
-      const post = req.body.text;
       const date = new Date();
 
-      const PostResponse = await ModifyDAO.addPost(post, date, title);
+      const PostResponse = await ModifyDAO.addPost(title, date, gist);
 
       res.json({ status: "success" });
     } catch (e) {
@@ -18,15 +18,17 @@ export default class ModifyController {
   static async apiUpdatePost(req, res, next) {
     try {
       const postId = req.body.post_id;
+      const gist = req.body.gist;
       const title = req.body.title;
-      const text = req.body.text;
+      const category = req.body.category;
       const date = new Date();
 
       const postResponse = await ModifyDAO.updatePost(
         postId,
-        text,
+        title,
+        category,
         date,
-        title
+        gist
       );
 
       var { error } = postResponse;
