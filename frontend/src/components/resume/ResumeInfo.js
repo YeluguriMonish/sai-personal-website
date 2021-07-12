@@ -48,28 +48,6 @@ export default {
       highlights: [],
     },
   ],
-  volunteer: [
-    {
-      organization: "Bachmanity Food Drive",
-      position: "Organizer",
-      website: "http://organization.com/",
-      startDate: "2015-03",
-      endDate: "2015-03",
-      summary:
-        "Bachmanity Insanity, which has been hailed as the event of the century, was able to raise over 1,000 pounds of non-perishable canned goods to help the homeless of San Frnacisco who have been abandoned by tech companies. ",
-      highlights: [],
-    },
-    {
-      organization: "Aviato - Soup Kitchen",
-      position: "Organizer",
-      website: "http://organization.com/",
-      startDate: "2008-05",
-      endDate: "2008-05",
-      summary:
-        "Aviatio (until its disbandment) was responsible for organizing a daily lunch for homeless employees",
-      highlights: [],
-    },
-  ],
   education: [
     {
       institution: "Berkeley College",
@@ -179,28 +157,6 @@ export default {
   ],
   languages: [],
   interests: [],
-  references: [
-    {
-      name: "Jian Yang",
-      reference:
-        "I do not respect you. You're not any kind of investor, you own nothing",
-    },
-    {
-      name: "Jian Yang",
-      reference:
-        "Erlich Bachman...This is you as an old man. I'm ugly and I'm dead. Alone",
-    },
-    {
-      name: "CJ Cantwell",
-      reference:
-        "Bachman recently founded venture capital firm Bachmanity Capital with tech icon (soon to be legend, I’m sure) Nelson “Big Head” Bighetti, and the pair hosted a lavish launch event, aptly titled “Bachmanity Insanity.” The party, like Bachman, was loud, extravagant and a bit of a farce. It was a luau. At Alcatraz. One for which Bachman chose to pay for all liquor at retail cost, and one where he lost a giant fiberglass Tiki head at the bottom of the bay. The expenses for fire dancers, flair bartenders and exotic caterers totaled over $1 million. Bachman maintains these were “practical costs for any groundbreaking business.”",
-    },
-    {
-      name: "CJ Cantwell",
-      reference:
-        "Bachmanity burned too bright, like the custom lighting at its luau and, like that lighting, the bulb burned out.",
-    },
-  ],
 };
 
 export const locationType = PropTypes.shape({
@@ -232,18 +188,6 @@ export const basicsType = PropTypes.shape({
 export const workType = PropTypes.arrayOf(
   PropTypes.shape({
     company: PropTypes.string,
-    position: PropTypes.string,
-    website: PropTypes.string,
-    startDate: PropTypes.string,
-    endDate: PropTypes.string,
-    summary: PropTypes.string,
-    highlights: PropTypes.arrayOf(PropTypes.string),
-  })
-).isRequired;
-
-export const volunteerType = PropTypes.arrayOf(
-  PropTypes.shape({
-    organization: PropTypes.string,
     position: PropTypes.string,
     website: PropTypes.string,
     startDate: PropTypes.string,
@@ -306,22 +250,13 @@ export const interestsType = PropTypes.arrayOf(
   })
 ).isRequired;
 
-export const referencesType = PropTypes.arrayOf(
-  PropTypes.shape({
-    name: PropTypes.string,
-    reference: PropTypes.string,
-  })
-).isRequired;
-
 export const resumeType = PropTypes.shape({
   basics: basicsType,
   work: workType,
-  volunteer: volunteerType,
   education: educationType,
   awards: awardsType,
   publications: publicationsType,
   skills: skillsType,
   languages: languagesType,
   interests: interestsType,
-  references: referencesType,
 });

@@ -3,11 +3,12 @@
 }
 
 a[style] {
-  color: var(--primary-accent)!important;
+  color: var(--primary-accent) !important;
 }
 span[style] {
-  color: var(--primary-accent)!important;
+  color: var(--primary-accent) !important;
+  background-color: var(--primary-background) !important;
 }
 div[style] {
-  border-color: var(--primary-accent)!important;
+  border-color: var(--primary-accent) !important;
 }

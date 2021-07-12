@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./header/Header.js";
 import Blog from "./blog/Blog.js";
-import Post from "./blog/post/Post.js";
+import Java from "./blog/post/Java.js";
 import Category from "./blog/category/Category.js";
 import Resume from "./resume/Resume.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -12,19 +12,19 @@ import "./Parent.css";
 
 export default class Parent extends Component {
   state = {
-    gist: "null",
     category: "null",
+    post: "null",
   };
 
   cardClickHandlerBlog = (category) => {
-    this.setState({ category: category }, () => {
+    this.setState({ category: category.posts }, () => {
       history.push(`/${this.state.category}`);
     });
   };
 
-  cardClickHandlerCategory = (gist) => {
-    this.setState({ gist: gist }, () => {
-      history.push(`/${this.state.gist}`);
+  cardClickHandlerCategory = (post) => {
+    this.setState({ post: post }, () => {
+      history.push(`/${this.state.post}`);
     });
   };
 
@@ -48,10 +48,7 @@ export default class Parent extends Component {
                 />
               )}
             />
-            <Route
-              path={`/${this.state.gist}`}
-              render={(props) => <Post gist={this.state.gist} />}
-            />
+            <Route path={"/java"} exact component={Java} />
           </Switch>
         </Router>
       </React.Fragment>

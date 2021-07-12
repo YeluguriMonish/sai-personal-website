@@ -1,21 +1,9 @@
 import React, { Component } from "react";
-import PostDataService from "../../../services/posts.js";
 import Card from "react-bootstrap/Card";
 
 export default class Post extends Component {
   state = {
-    title: "",
-    posts: [],
-  };
-
-  componentDidMount() {
-    this.getPosts();
-  }
-
-  getPosts = () => {
-    PostDataService.find(this.props.category, "category").then((response) => {
-      this.setState({ posts: response.data.posts });
-    });
+    posts: this.props.category,
   };
 
   render() {
@@ -25,12 +13,12 @@ export default class Post extends Component {
           <>
             <Card className="cards">
               <Card.Body>
-                <Card.Title>{post.title}</Card.Title>
+                <Card.Title>{post}</Card.Title>
                 <a
                   href="#"
                   class="stretched-link"
                   onClick={() => {
-                    this.props.handleClick(post.gist);
+                    this.props.handleClick(post);
                   }}
                 ></a>
               </Card.Body>
