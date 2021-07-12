@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import github from "./GitHub-Mark-Light-120px-plus.png";
+import linkedin from "./linkedin-128.png";
 
 import "./Header.css";
 
@@ -18,7 +20,7 @@ export default class Header extends Component {
             {" "}
             <a href="https://github.com/YeluguriMonish">
               <img
-                src="https://gdurl.com/Emiq"
+                src={github}
                 alt="github icon"
                 width="30"
                 height="30"
@@ -29,7 +31,7 @@ export default class Header extends Component {
           <Navbar.Brand>
             <a href="https://www.linkedin.com/">
               <img
-                src="https://gdurl.com/7-5R"
+                src={linkedin}
                 alt="linked icon"
                 width="30"
                 height="30"

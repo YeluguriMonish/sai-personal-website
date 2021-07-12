@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
+import profilePicture from "./piplup.png";
 
 export default {
   basics: {
     name: "Sai Chatla",
     label: "Quant Research Intern",
-    picture: "https://gdurl.com/GF9U",
+    picture: profilePicture,
     email: "erlich@piedpiper.com",
     phone: "1 (912) 555-4321",
     location: {
